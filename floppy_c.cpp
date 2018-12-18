@@ -23,9 +23,15 @@ class Note
     int nlen = 100; // Note length in ms
 };
 
-const int alen = 11;
-Note cena[alen] = {Note(NOTE_G2, EIGHT_NOTE), Note(NOTE_AS2, SIXTEENTH_NOTE), Note(NOTE_F2, SIXTEENTH_NOTE), Note(REST, SIXTEENTH_NOTE), Note(NOTE_G2, HALF_NOTE + EIGHT_NOTE), Note(REST, SIXTEENTH_NOTE),
-    Note(NOTE_AS2, EIGHT_NOTE), Note(NOTE_A2, SIXTEENTH_NOTE), Note(NOTE_F2, SIXTEENTH_NOTE), Note(REST, SIXTEENTH_NOTE), Note(NOTE_G2, HALF_NOTE+SIXTEENTH_NOTE)};
+const int cenalen = 11;
+Note cenalow[cenalen] = {Note(NOTE_G2, EIGHT_NOTE), Note(NOTE_AS2, SIXTEENTH_NOTE), Note(NOTE_F2, SIXTEENTH_NOTE), Note(REST, SIXTEENTH_NOTE), Note(NOTE_G2, HALF_NOTE + EIGHT_NOTE),
+    Note(REST, SIXTEENTH_NOTE), Note(NOTE_AS2, EIGHT_NOTE), Note(NOTE_A2, SIXTEENTH_NOTE), Note(NOTE_F2, SIXTEENTH_NOTE), Note(REST, SIXTEENTH_NOTE), Note(NOTE_G2, HALF_NOTE+SIXTEENTH_NOTE)};
+
+Note cenamed[cenalen] = {Note(NOTE_G3, EIGHT_NOTE), Note(NOTE_AS3, SIXTEENTH_NOTE), Note(NOTE_F3, SIXTEENTH_NOTE), Note(REST, SIXTEENTH_NOTE), Note(NOTE_G3, HALF_NOTE + EIGHT_NOTE),
+    Note(REST, SIXTEENTH_NOTE), Note(NOTE_AS3, EIGHT_NOTE), Note(NOTE_A3, SIXTEENTH_NOTE), Note(NOTE_F3, SIXTEENTH_NOTE), Note(REST, SIXTEENTH_NOTE), Note(NOTE_G3, HALF_NOTE+SIXTEENTH_NOTE)};
+
+Note cenahigh[cenalen] = {Note(NOTE_G4, EIGHT_NOTE), Note(NOTE_AS4, SIXTEENTH_NOTE), Note(NOTE_F4, SIXTEENTH_NOTE), Note(REST, SIXTEENTH_NOTE), Note(NOTE_G4, HALF_NOTE + EIGHT_NOTE),
+    Note(REST, SIXTEENTH_NOTE), Note(NOTE_AS4, EIGHT_NOTE), Note(NOTE_A4, SIXTEENTH_NOTE), Note(NOTE_F4, SIXTEENTH_NOTE), Note(REST, SIXTEENTH_NOTE), Note(NOTE_G4, HALF_NOTE+SIXTEENTH_NOTE)};
 
 /*
    Current position of the read/write head, floppy drive generally has
@@ -50,9 +56,9 @@ void setup() {
 
   delay(1000);
 
-  for (int i = 0; i < alen; i++)
+  for (int i = 0; i < cenalen; i++)
   {
-    play_note(MYSTEP, MYDIR, cena[i].nfrq, cena[i].nlen);
+    play_note(MYSTEP, MYDIR, cenalow[i].nfrq, cenalow[i].nlen);
   }
 }
 
